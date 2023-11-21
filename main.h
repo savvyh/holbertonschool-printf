@@ -3,5 +3,6 @@
 
 int _strlen(char *string);
 char *print_char(const char *format, char argument);
+char *replace_string(char *format, char *argument);
 
 #endif
