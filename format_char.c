@@ -17,8 +17,10 @@
 char *format_char(const char *format, char argument)
 {
 	char *string_return = NULL;
-	int index;
+	int index = 0;
 	int result_index = 0;
+	int stop = 0;
+
 	int lenght_format = _strlen((char *)format);
 	int lenght_argument = 1;
 	int stop = 0;

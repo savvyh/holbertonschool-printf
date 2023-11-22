@@ -12,7 +12,7 @@
  * Return: A new string where all %s occurrences have been replaced
  *			by the value of 'argument'
 */
-char *format_string(char *format, char *argument)
+char *format_string(const char *format, char *argument)
 {
 	int format_length = _strlen(format);
 	int argument_length = _strlen(argument);
