@@ -43,6 +43,6 @@ char *format_char(const char *format, char argument)
 		index++;
 		result_index++;
 	}
-	string_return[index] = '\0';
+	string_return[result_index] = '\0';
 	return (string_return);
 }
