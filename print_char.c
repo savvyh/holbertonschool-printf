@@ -3,10 +3,10 @@
 
 /**
  * print_char - function to print a character when it match witch the symbol %
- * follow by the character 'c'.
- * If it match with %c, then it replaces by the variable 'argument'.
+ *				follow by the character 'c'.
+ *				If it match with %c, then it replaces by the variable 'argument'.
  *
- * @format: The input, a string.
+ * @format: The input: a type of data we need to print.
  * @argument: The character to add to the string inside format.
  *
  * Return: The string which is the modified format string.
@@ -21,6 +21,11 @@ char *print_char(const char *format, char argument)
 
 	string_return = malloc(sizeof(format) + (lenght_argument - 2));
 
+	if (string_return == NULL)
+	{
+		return (NULL);
+	}
+	
 	for (index = 0; format[index]; index++)
 	{
 		if (format[index] == '%' && stop != 1)

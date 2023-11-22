@@ -9,6 +9,7 @@ int main(void)
 	printf("%s\n", string);
 	string = print_char(string, 'b');
 	printf("%s\n", string);
+	printf("%%\n");
 	free(string);
 	return (0);
 }
