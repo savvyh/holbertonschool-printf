@@ -16,28 +16,31 @@
 char *format_char(const char *format, char argument)
 {
 	char *string_return = NULL;
-	int index;
+	int index = 0;
+	int result_index = 0;
 	int stop = 0;
-	int lenght_format = _strlen(format);
+	int lenght_format = _strlen((char *)format);
 	int lenght_argument = 1;
 
 	string_return = malloc(sizeof(char) * (lenght_format + lenght_argument) + 1);
 
 	if (string_return == NULL)
 		return (NULL);
-
-	for (index = 0; format[index]; index++)
+		
+	while (format[index])
 	{
 		if (format[index] == '%' && stop != 1)
 		{
-			string_return[index] = argument;
+			string_return[result_index] = argument;
 			index++;
 			stop = 1;
 		}
 		else
 		{
-			string_return[index] = format[index];
+			string_return[result_index] = format[index];
 		}
+		index++;
+		result_index++;
 	}
 	string_return[index] = '\0';
 	return (string_return);
