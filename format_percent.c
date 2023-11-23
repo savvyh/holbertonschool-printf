@@ -10,9 +10,9 @@
  *
  * Return: a new string with the null byte
 */
-char *format_percent(char *format)
+char *format_percent(const char *format)
 {
-	int format_length = _strlen(format);
+	int format_length = _strlen((char *)format);
 	char *new_string = NULL;
 	int index_format = 0;
 	int index_new_string = 0;
