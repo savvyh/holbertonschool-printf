@@ -13,7 +13,6 @@ int _putchar(char c);
 int _printf(const char *format, ...);
 char *function_int_analyser(char *string_final,
 							 va_list args_value);
-int _atoi(char *s);
 char *format_entier2(char *string_final, int entier);
 char *format_entier(char *string_final, int entier);
 char *_itoa(int value);
