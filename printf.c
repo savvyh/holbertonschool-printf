@@ -25,10 +25,11 @@ int _printf(const char *format, ...)
 
 	string_final = malloc(4000);
 
-	if (string_final == NULL)
+	if ((string_final == NULL || format == NULL) ||
+		(format[0] == '%' && format[1] == '\0'))
 	{
 		free(string_final);
-		return (-1);
+		exit(1);
 	}
 
 	while (format[index])
