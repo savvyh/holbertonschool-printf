@@ -37,7 +37,7 @@ char *function_analyser(const char *format, char *string_final,
 			if (string_final[index + 1] == 'c')
 			{
 				int ch = va_arg(args_value, int);
-				
+
 				string_final = format_char(string_final, ch);
 			}
 			if (string_final[index + 1] == 's')
