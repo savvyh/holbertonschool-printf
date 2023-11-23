@@ -1,20 +1,19 @@
 #include "main.h"
 #include <stdlib.h>
 #include <stdio.h>
-
 /**
- * format_char - function to print a character when it match with %c.
+ * format_entier2 - function to print an int when it match with %i.
  *
- * Description: Print a character when it match with %,
- *				follow by the character 'c'.
- *				If it match with %c, then it replaces by the variable 'argument'.
+ * Description: Print an integer when it match with %,
+ *				follow by the character 'i'.
+ *				If it match with %i, then it replaces by the variable 'argument'.
  *
- * @format: The input, a string.
- * @entier: The character to add to the string inside format.
+ * @string_final: input of a string in format and
+ *				  become the new string with modification.
+ * @entier: The integer to add to the string inside format.
  *
  * Return: The string which is the modified format string.
 */
-
 char *format_entier2(char *string_final, int entier)
 {
 	int format_length = _strlen((char *)string_final);
@@ -34,7 +33,8 @@ char *format_entier2(char *string_final, int entier)
 		return (NULL);
 	for (index_format = 0; index_format < format_length; index_format++)
 	{
-		if (string_final[index_format] == '%' && string_final[index_format + 1] == 'i' && stop != 1)
+		if (string_final[index_format] == '%' &&
+			string_final[index_format + 1] == 'i' && stop != 1)
 		{
 			for (index_argument = 0; index_argument < argument_length; index_argument++)
 				string_return[index_result++] = str[index_argument];
