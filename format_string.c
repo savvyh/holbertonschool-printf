@@ -7,15 +7,15 @@
  *				within the 'format' string and replace with the 'argument' string.
  *
  * @format: A string which contains the specifier %s to replace it.
- * @argument: The string that replace the %s.
+ * @str: The string that replace the %s.
  *
  * Return: A new string where all %s occurrences have been replaced
  *			by the value of 'argument'
 */
-char *format_string(const char *format, char *argument)
+char *format_string(const char *format, char *str)
 {
-	int format_length = _strlen(format);
-	int argument_length = _strlen(argument);
+	int format_length = _strlen((char *)format);
+	int argument_length = _strlen(str);
 	int result_length = format_length + argument_length;
 	int index_format;
 	int index_argument;
@@ -35,7 +35,7 @@ char *format_string(const char *format, char *argument)
 		{
 			for (index_argument = 0; index_argument < argument_length; index_argument++)
 			{
-				string_return[index_result++] = argument[index_argument];
+				string_return[index_result++] = str[index_argument];
 			}
 			index_format++;
 			stop = 1;
