@@ -20,15 +20,15 @@ int _printf(const char *format, ...)
 	int nbre_byte = 0;
 	va_list args_value;
 
-	string_final = malloc(8000);
+	va_start(args_value, format);
+
+	string_final = malloc(4000);
 
 	if (string_final == NULL)
 	{
 		free(string_final);
-		exit(1);
+		return (-1);
 	}
-
-	va_start(args_value, format);
 
 	while (format[index])
 	{
@@ -42,7 +42,6 @@ int _printf(const char *format, ...)
 	{
 		_putchar(string_final[nbre_byte]);
 	}
-	_putchar('\0');
 	va_end(args_value);
 	free(string_final);
 	return (nbre_byte);
