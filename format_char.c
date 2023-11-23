@@ -14,7 +14,7 @@
  * Return: The string which is the modified format string.
 */
 
-char *format_char(const char *format, char ch)
+char *format_char(char *format, char ch)
 {
 	char *string_return = NULL;
 	int index = 0;
@@ -31,7 +31,7 @@ char *format_char(const char *format, char ch)
 
 	while (format[index])
 	{
-		if (format[index] == '%' && stop != 1)
+		if (format[index] == '%' && format[index + 1] == 'c' && stop != 1)
 		{
 			string_return[result_index] = ch;
 			index++;
