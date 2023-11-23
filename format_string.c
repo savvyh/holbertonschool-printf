@@ -22,7 +22,7 @@ char *format_string(const char *format, char *str)
 	int index_result = 0;
 	int stop = 0;
 
-	char *string_return = NULL;
+	char *string_return;
 
 	string_return = malloc(sizeof(char) * (result_length + 1));
 

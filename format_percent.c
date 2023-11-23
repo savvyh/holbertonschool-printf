@@ -13,7 +13,7 @@
 char *format_percent(const char *format)
 {
 	int format_length = _strlen((char *)format);
-	char *new_string = NULL;
+	char *new_string;
 	int index_format = 0;
 	int index_new_string = 0;
 	int stop = 0;
