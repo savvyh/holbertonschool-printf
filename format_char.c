@@ -9,12 +9,12 @@
  *				If it match with %c, then it replaces by the variable 'argument'.
  *
  * @format: The input, a string.
- * @argument: The character to add to the string inside format.
+ * @ch: The character to add to the string inside format.
  *
  * Return: The string which is the modified format string.
 */
 
-char *format_char(const char *format, char argument)
+char *format_char(const char *format, char ch)
 {
 	char *string_return = NULL;
 	int index = 0;
@@ -23,7 +23,6 @@ char *format_char(const char *format, char argument)
 
 	int lenght_format = _strlen((char *)format);
 	int lenght_argument = 1;
-	int stop = 0;
 
 	string_return = malloc(sizeof(char) * (lenght_format + lenght_argument) + 1);
 
@@ -34,7 +33,7 @@ char *format_char(const char *format, char argument)
 	{
 		if (format[index] == '%' && stop != 1)
 		{
-			string_return[result_index] = argument;
+			string_return[result_index] = ch;
 			index++;
 			stop = 1;
 		}
