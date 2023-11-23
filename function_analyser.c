@@ -21,8 +21,11 @@ char *function_analyser(const char *format, char *string_final,
 	int index = 0;
 
 	for (index = 0; format[index]; index++)
+	{
 		string_final[index] = format[index];
+	}
 	index = 0;
+
 	while (string_final[index])
 	{
 		if (string_final[index] == '%')
