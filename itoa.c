@@ -1,20 +1,33 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-char *itoa(int num)
+#include <stdlib.h>
+
+char* _itoa(int value)
 {
+    int n = abs(value);
+    int num_digits = 1 + (value < 0);
+	   char* result = (char*)malloc((num_digits + 1) * sizeof(char));
 
-    int size = snprintf(NULL, 0, "%d", num);
-
-
-    char *str = (char *)malloc((size + 1) * sizeof(char));
-
-    if (str == NULL)
-    {
+	if (result == NULL)
+	{
         return NULL;
     }
 
-    snprintf(str, size + 1, "%d", num);
+    while (n >= 10) {
+        n /= 10;
+        num_digits++;
+    }
 
-    return str;
+    n = abs(value);
+    result[num_digits] = '\0';
+    while (num_digits--) {
+        result[num_digits] = (n % 10) + '0';
+        n /= 10;
+    }
+
+    if (value < 0) {
+        result[0] = '-';
+    }
+    return result;
 }
