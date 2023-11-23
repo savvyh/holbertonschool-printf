@@ -25,8 +25,7 @@ int _printf(const char *format, ...)
 
 	string_final = malloc(4000);
 
-	if ((string_final == NULL || format == NULL) ||
-		(format[0] == '%' || format[0] == '\0'))
+	if (string_final == NULL)
 	{
 		free(string_final);
 		return (-1);
