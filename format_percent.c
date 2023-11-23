@@ -10,9 +10,9 @@
  *
  * Return: a new string with the null byte
 */
-char *format_percent(const char *format)
+char *format_percent(char *format)
 {
-	int format_length = _strlen((char *)format);
+	int format_length = _strlen(format);
 	char *new_string;
 	int index_format = 0;
 	int index_new_string = 0;
@@ -27,7 +27,7 @@ char *format_percent(const char *format)
 
 	for (index_format = 0; index_format < format_length; index_format++)
 	{
-		if (format[index_format] == '%' && stop != 1)
+		if (format[index_format] == '%' && format[index_format + 1] == '%' && stop != 1)
 		{
 			new_string[index_new_string++] = '%';
 			index_format++;
@@ -38,7 +38,5 @@ char *format_percent(const char *format)
 			new_string[index_new_string++] = format[index_format];
 		}
 	}
-	new_string[index_new_string] = '\0';
-
 	return (new_string);
 }
