@@ -10,19 +10,14 @@
  *
  * @format: The input, a string with a format specifier.
  * @string_final: Receive a new_string without the specifier %%, %s or %c
- * @arguments: The string that replace the specifier %%, %s or %c
+ * @args_value: The list of arguments received by function _printf.
  *
  * Return: a new_string with argument that replace the format specifier
 */
-char *function_analyser(const char *format, char *string_final, char arguments)
+char *function_analyser(const char *format, char *string_final,
+						 va_list args_value)
 {
 	int index = 0;
-
-	while (format[index])
-	{
-		string_final[index] = format[index];
-		index++;
-	}
 
 	for (index = 0; format[index]; index++)
 	{
@@ -30,12 +25,16 @@ char *function_analyser(const char *format, char *string_final, char arguments)
 		{
 			if (string_final[index + 1] == 'c')
 			{
-				string_final = format_char(format, arguments);
+				int ch = va_arg(args_value, int);
+
+				string_final = format_char(format, ch);
 				index = 0;
 			}
 			if (string_final[index + 1] == 's')
 			{
-				string_final = format_string(format, arguments);
+				char *str = va_arg(args_value, char *);
+
+				string_final = format_string(format, str);
 				index = 0;
 			}
 			if (string_final[index + 1] == '%')
