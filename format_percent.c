@@ -27,7 +27,8 @@ char *format_percent(char *format)
 
 	for (index_format = 0; index_format < format_length; index_format++)
 	{
-		if (format[index_format] == '%' && format[index_format + 1] == '%' && stop != 1)
+		if (format[index_format] == '%' && format[index_format + 1]
+			== '%' && stop != 1)
 		{
 			new_string[index_new_string++] = '%';
 			index_format++;
