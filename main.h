@@ -7,7 +7,7 @@ char *format_char(const char *format, char ch);
 char *function_analyser(const char *format, char *string_final,
 						va_list args_value);
 char *format_percent(const char *format);
-char *format_string(const char *format, char *argument);
+char *format_string(const char *format, char *str);
 int _putchar(char c);
 int _printf(const char *format, ...);
 
