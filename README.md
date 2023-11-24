@@ -131,6 +131,10 @@ Output:
 ```
 %
 ```
+
+## Man page 📖
+[Link to the man page of _printf function](man_3_printf)
+
 ## Authors 🧞‍♂️🧞‍♀️
 [Link to the collaborators of this beautiful project](AUTHORS.md)
 
