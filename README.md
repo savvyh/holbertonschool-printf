@@ -15,7 +15,7 @@ any main function.
 
 Example `main.c`:
 ```
-#include "holberton.h"
+#include "main.h"
 
 int main(void)
 {
@@ -98,7 +98,7 @@ Output:
 
 #### s
 The `const char *` argument is expected to be a pointer to a character array
-(aka. pointer to a string). Characters from the array are written starting
+. Characters from the array are written starting
 from the first element of the array and ending at, but not including, the
 terminating null byte (`\0`).
 
@@ -106,12 +106,12 @@ Example `main.c`:
 ```
 int main(void)
 {
-    _printf("%s\n", "Hello, World!");
+    _printf("%s\n", "Hello, Holberton!");
 }
 ```
 Output:
 ```
-Hello, World!
+Hello, Holberton!
 ```
 
 #### %
