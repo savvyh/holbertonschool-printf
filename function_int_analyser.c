@@ -25,13 +25,13 @@ char *function_int_analyser(char *string_final, va_list args_value)
 		{
 			if(string_final[index + 1] == 'd')
 			{
-				int entier = va_arg(args_value, int);
+				long int entier = va_arg(args_value, int);
 
 				string_final = format_entier(string_final, entier);
 			}
 			if(string_final[index + 1] == 'i')
 			{
-				int entier = va_arg(args_value, int);
+				long int entier = va_arg(args_value, int);
 
 				string_final = format_entier2(string_final, entier);
 			}

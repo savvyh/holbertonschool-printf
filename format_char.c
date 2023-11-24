@@ -31,6 +31,11 @@ char *format_char(char *format, char ch)
 
 	while (format[index])
 	{
+		if (ch == '\0')
+		{
+			index = index + 2;
+			_putchar('\0');
+		}
 		if (format[index] == '%' && format[index + 1] == 'c' && stop != 1)
 		{
 			string_return[result_index] = ch;
