@@ -11,9 +11,9 @@ char *format_percent(char *format);
 char *format_string(char *format, char *str);
 int _putchar(char c);
 int _printf(const char *format, ...);
-char *function_int_analyser(char *string_final,
-							 va_list args_value);
+char *function_int_analyser(char *string_final, va_list args_value);
 char *format_entier2(char *string_final, long int entier);
 char *format_entier(char *string_final, long int entier);
 char *_itoa(long int value);
+
 #endif
