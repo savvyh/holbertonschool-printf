@@ -1,7 +1,6 @@
 #include "main.h"
 #include <stdarg.h>
 #include <stdlib.h>
-#include <stdio.h>
 /**
  * function_analyser - analyse the input format and guide to the good function
  *
@@ -21,8 +20,11 @@ char *function_analyser(const char *format, char *string_final,
 	int index = 0;
 
 	for (index = 0; format[index]; index++)
+	{
 		string_final[index] = format[index];
+	}
 	index = 0;
+
 	while (string_final[index])
 	{
 		if (string_final[index] == '%')
@@ -41,6 +43,8 @@ char *function_analyser(const char *format, char *string_final,
 			{
 				char *str = va_arg(args_value, char *);
 
+				if (str == NULL)
+					str = "(null)";
 				string_final = format_string(string_final, str);
 			}
 		}

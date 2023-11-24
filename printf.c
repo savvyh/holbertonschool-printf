@@ -9,7 +9,7 @@
  *				and produces the output according to a format.
  *				This function call other function to go at the aim.
  *
- * @format: Thje input, a string with a format specifier.
+ * @format: The input, a string with a format specifier.
  *
  * Return: number of byte and a new string (the modified format).
 */
@@ -31,7 +31,6 @@ int _printf(const char *format, ...)
 		free(string_final);
 		exit(1);
 	}
-
 	while (format[index])
 	{
 		string_final[index] = format[index];
