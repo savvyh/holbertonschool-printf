@@ -31,7 +31,6 @@ int _printf(const char *format, ...)
 		free(string_final);
 		exit(1);
 	}
-
 	while (format[index])
 	{
 		string_final[index] = format[index];

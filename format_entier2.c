@@ -14,7 +14,9 @@
  *
  * Return: The string which is the modified format string.
 */
-char *format_entier2(char *string_final, int entier)
+
+char *format_entier2(char *string_final, long int entier)
+
 {
 	int format_length = _strlen((char *)string_final);
 	char *str = _itoa(entier);

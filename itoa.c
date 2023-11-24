@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+
 /**
  * _itoa - function similar to the real function itoa
  *
@@ -9,9 +10,9 @@
  *
  * Return: the result of the convertion int to char
 */
-char *_itoa(int value)
+char *_itoa(long int value)
 {
-	int n = abs(value);
+	long int n = labs(value);
 	int num_digits = 1 + (value < 0);
 	char *result = (char *)malloc((num_digits + 1) * sizeof(char));
 
@@ -26,7 +27,8 @@ char *_itoa(int value)
 		num_digits++;
 	}
 
-	n = abs(value);
+
+	n = labs(value);
 	result[num_digits] = '\0';
 	while (num_digits--)
 	{
