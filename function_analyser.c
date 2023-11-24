@@ -1,7 +1,6 @@
 #include "main.h"
 #include <stdarg.h>
 #include <stdlib.h>
-#include <stdio.h>
 /**
  * function_analyser - analyse the input format and guide to the good function
  *
